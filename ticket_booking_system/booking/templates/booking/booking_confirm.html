@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Confirmed</title>
+</head>
+<body>
+    <h1>Booking Confirmed!</h1>
+    <p>You booked {{ quantity }} tickets for "{{ title }}"</p>
+    <a href="{% url 'show_list' %}">Back to Shows</a> |
+    <a href="{% url 'booking_history' %}">View My Bookings</a>
+</body>
+</html>

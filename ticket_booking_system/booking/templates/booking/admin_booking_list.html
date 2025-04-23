@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Bookings</title>
+</head>
+<body>
+    <h1>All Bookings</h1>
+    <ul>
+    {% for booking in bookings %}
+        <li>
+            {{ booking.user.username }} booked {{ booking.quantity }} ticket(s) for "{{ booking.show.title }}"<br>
+            On: {{ booking.booking_time }}
+        </li><br>
+    {% empty %}
+        <li>No bookings made yet.</li>
+    {% endfor %}
+    </ul>
+
+    <a href="{% url 'admin_show_list' %}">Back to Admin Panel</a>
+</body>
+</html>

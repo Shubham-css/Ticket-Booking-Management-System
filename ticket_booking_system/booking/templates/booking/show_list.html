@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Shows</title>
+</head>
+<body>
+    <h1>Available Shows</h1>
+    <ul>
+        {% for show in shows %}
+            <li>
+                <strong>{{ show.title }}</strong><br>
+                {{ show.description }}<br>
+                Date: {{ show.date }} | Time: {{ show.time }}<br>
+                Seats Available: {{ show.available_seats }}
+            </li><br>
+        {% empty %}
+            <li>No shows available.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>

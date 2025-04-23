@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Bookings</title>
+</head>
+<body>
+    <h1>My Bookings</h1>
+    {% if bookings %}
+        <ul>
+        {% for booking in bookings %}
+            <li>
+                Show: {{ booking.title }}<br>
+                Tickets Booked: {{ booking.quantity }}
+            </li><br>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No bookings yet.</p>
+    {% endif %}
+    <a href="{% url 'show_list' %}">Back to Shows</a>
+</body>
+</html>

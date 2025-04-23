@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo Building the Django app'
+            }
+        }
+
+        stage('Install Requirements') {
+            steps {
+                sh 'pip install -r requirements.txt'
+            }
+        }
+
+        stage('Run Migrations') {
+            steps {
+                sh 'python manage.py migrate'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                sh 'python manage.py test'
+            }
+        }
+
+        stage('Run Server (Dev Only)') {
+            steps {
+                sh 'python manage.py runserver'
+            }
+        }
+    }
+}

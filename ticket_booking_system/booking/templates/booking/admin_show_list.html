@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin - Show Management</title>
+</head>
+<body>
+    <h1>Admin - Manage Shows</h1>
+
+    <a href="{% url 'admin_add_show' %}">Add New Show</a><br><br>
+
+    <ul>
+    {% for show in shows %}
+        <li>
+            <strong>{{ show.title }}</strong> — {{ show.date }} {{ show.time }}<br>
+            Seats: {{ show.available_seats }}<br>
+            <a href="{% url 'admin_edit_show' show.id %}">Edit</a> |
+            <a href="{% url 'admin_delete_show' show.id %}">Delete</a>
+        </li><br>
+    {% empty %}
+        <li>No shows added yet.</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

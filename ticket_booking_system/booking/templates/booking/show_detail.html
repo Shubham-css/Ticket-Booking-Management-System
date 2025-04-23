@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ show.title }}</title>
+</head>
+<body>
+    <h1>{{ show.title }}</h1>
+    <p>{{ show.description }}</p>
+    <p>Date: {{ show.date }} | Time: {{ show.time }}</p>
+    <p>Available Seats: {{ show.available_seats }}</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <label>Quantity:</label>
+        <input type="number" name="quantity" min="1" max="{{ show.available_seats }}" required>
+        <button type="submit">Book Tickets</button>
+    </form>
+
+    <br>
+    <a href="{% url 'show_list' %}">Back to Shows</a>
+</body>
+</html>
