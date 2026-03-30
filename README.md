@@ -1,85 +1,188 @@
 # 🎟️ Ticket Booking Management System
 
-A full-featured ticket booking web application built with Django, featuring authentication, session-based booking history.
-A custom admin panel — all strictly adhering to architectural and DevOps constraints.
+A full-featured **Ticket Booking Web Application** built using **Django**, featuring authentication, session-based booking history, and a fully custom admin panel.
+This project also incorporates **Docker containerization** and **Jenkins CI/CD pipeline**, demonstrating both backend and DevOps integration.
 
 ---
 
 ## 🚀 Features
 
 ### 👤 Authentication
-- Manual user registration & login/logout (no Django Forms)
-- Session-based authentication using Django's built-in system
+
+* Manual user registration and login/logout
+* Session-based authentication using Django's built-in system
+* No Django Forms (custom implementation)
 
 ### 🎫 User Functionality
-- View all available shows
-- Book tickets with manual HTML form (seat quantity selection)
-- Session-based booking cart
-- Booking history page showing all previous bookings
 
-### 🛠️ Admin Panel (Custom)
-- Add/Edit/Delete shows manually
-- View all user bookings (stored in DB)
-- Fully custom HTML-based admin (no Django Admin used)
+* View all available shows
+* Book tickets with manual HTML form
+* Seat quantity selection
+* Session-based booking cart
+* Booking history page
+
+### 🛠️ Custom Admin Panel
+
+* Add shows manually
+* Edit existing shows
+* Delete shows
+* View all user bookings
+* Custom HTML-based admin (No Django Admin used)
 
 ---
 
 ## 🧑‍💻 Tech Stack
 
-- **Backend**: Django 5.2
-- **Frontend**: HTML5 + CSS3
-- **Containerization**: Docker, Docker Compose
-- **CI/CD**: Jenkins Pipeline
-- **Version Control**: Git + GitHub
+* **Backend:** Django 5.2
+* **Frontend:** HTML5, CSS3
+* **Database:** SQLite (default Django DB)
+* **Containerization:** Docker, Docker Compose
+* **CI/CD:** Jenkins Pipeline
+* **Version Control:** Git, GitHub
 
 ---
 
 ## ⚙️ DevOps Setup
 
 ### 🐳 Dockerized
-- `Dockerfile` for building the Django image (Python 3.13-slim)
-- `docker-compose.yml` for managing Django service
+
+* Dockerfile for building Django image
+* Python 3.13-slim base image
+* docker-compose for service orchestration
 
 ### 🛠️ Jenkins CI/CD Pipeline
-- `Jenkinsfile` with multi-stage pipeline:
-  - Install dependencies
-  - Run tests
-    
----
 
-## 📁 Key Project Files
+Multi-stage pipeline includes:
 
-
-### 📁 Root Directory
-
-- `manage.py`  # Django’s command-line utility for running the project
-- `Dockerfile`  # Builds the Docker image for the Django app
-- `docker-compose.yml`  # Orchestrates the Django container setup
-- `Jenkinsfile`  # Defines CI/CD pipeline stages (build, test, run)
-- `requirements.txt`  # Contains all Python dependencies
+* Install dependencies
+* Run tests
+* Build container
+* Deploy (if configured)
 
 ---
 
-### 📁 config/ (Project Settings)
+## 📂 Project Structure
 
-- `settings.py`  # Django project settings and configurations
-- `urls.py`  # Global URL router, includes app-level URLs
-- `wsgi.py`  # WSGI entry point for deployment (Gunicorn/Apache)
+### Root Directory
+
+```id="dxz4u1"
+manage.py
+Dockerfile
+docker-compose.yml
+Jenkinsfile
+requirements.txt
+```
+
+### config/ (Project Settings)
+
+```id="3q0ycc"
+config/
+├── settings.py
+├── urls.py
+└── wsgi.py
+```
+
+### booking/ (Main Application)
+
+```id="yq2h0o"
+booking/
+├── models.py
+├── views.py
+├── urls.py
+└── templates/
+```
+
+### Templates
+
+```id="u6yqk8"
+templates/booking/
+├── show_list.html
+├── show_detail.html
+├── booking_confirm.html
+├── booking_history.html
+├── admin_show_list.html
+├── admin_add_show.html
+├── admin_edit_show.html
+├── admin_delete_show.html
+└── admin_booking_list.html
+```
 
 ---
 
-### 📁 booking/ (Main Application)
+## ▶️ How to Run Locally
 
-- `models.py`  # Defines the `Show` and `Booking` data models
-- `views.py`  # All logic handled using CBVs (Class-Based Views)
-- `urls.py`  # URL patterns mapped to views
-- `templates/booking/`
-  - `show_list.html`  # Displays all available shows
-  - `show_detail.html`  # Show details and booking form
-  - `booking_confirm.html`  # Confirmation after booking tickets
-  - `booking_history.html`  # Shows user's booking history
-  - `admin_show_list.html`  # Admin panel – list of all shows
-  - `admin_add_show.html`  # Form to add a new show
-  - `admin_edit_show.html`  # Form to edit existing show
-  - `admin_delete_show.html`  # Confirmation page to delete show
-  - `admin_booking_list.html`  # Admin view for all user bookings
+### 1. Clone the repository
+
+```bash id="ts8bl6"
+git clone https://github.com/Shubham-css/Ticket-Booking-Management-System.git
+```
+
+### 2. Navigate to project folder
+
+```bash id="kqg66o"
+cd Ticket-Booking-Management-System
+```
+
+### 3. Install dependencies
+
+```bash id="s3e9xk"
+pip install -r requirements.txt
+```
+
+### 4. Run migrations
+
+```bash id="fkgm33"
+python manage.py migrate
+```
+
+### 5. Run server
+
+```bash id="4z8b0s"
+python manage.py runserver
+```
+
+---
+
+## 🐳 Run with Docker
+
+```bash id="2f1lkk"
+docker-compose up --build
+```
+
+---
+
+## 🧠 Key Highlights
+
+* Custom authentication without Django Forms
+* Session-based booking system
+* Fully custom admin panel
+* Dockerized Django application
+* Jenkins CI/CD integration
+* Clean MVC architecture
+
+---
+
+## 🎯 Use Cases
+
+* Movie ticket booking systems
+* Event reservation platforms
+* Learning Django backend architecture
+* DevOps integration practice
+
+---
+
+## 🔗 Repository Link
+
+https://github.com/Shubham-css/Ticket-Booking-Management-System
+
+---
+
+## 👨‍💻 Author
+
+**Shubham**
+
+---
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub!
