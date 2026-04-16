@@ -170,6 +170,24 @@ docker-compose up --build
 * DevOps integration practice
 
 ---
+🔮 Future Scope
+
+This project lays a strong foundation for a scalable ticket booking system. Several enhancements can be implemented to make it production-ready and more feature-rich:
+
+💳 Payment Integration
+Integrate secure online payment gateways (e.g., Stripe, Razorpay)
+Enable real-time transaction handling and booking confirmation
+🎟️ Seat Selection System
+Implement graphical seat layout (like theatres)
+Allow users to choose specific seats instead of quantity-based booking
+📱 Responsive UI & Frontend Framework
+Upgrade frontend using React or Vue.js
+Improve UI/UX with fully responsive design for mobile and tablets
+📧 Notifications & Alerts
+Email/SMS confirmation for bookings
+Reminders for upcoming shows
+Admin alerts for new bookings
+---
 
 ## 🔗 Repository Link
 
