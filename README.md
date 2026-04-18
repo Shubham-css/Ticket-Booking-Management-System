@@ -197,7 +197,7 @@ https://github.com/Shubham-css/Ticket-Booking-Management-System
 
 ## 👨‍💻 Author
 
-**Shubham**
+**Shubham Fulwani**
 
 ---
 
